@@ -1,0 +1,15 @@
+<launch>
+  <!-- Arguments -->
+  <arg name="multi_robot_name" default=""/>
+
+  <!-- Start the node without namespace-->
+  <group if = "$(eval multi_robot_name == '')">
+    <node pkg="turtlebot3_manipulation_bringup" type="turtlebot3_manipulation_bringup" name="turtlebot3_manipulation_bringup" output="screen"/>
+  </group>
+
+  <!-- Start the node with namespace-->
+  <group unless = "$(eval multi_robot_name == '')">
+    <node ns="$(arg multi_robot_name)" pkg="turtlebot3_manipulation_bringup" type="turtlebot3_manipulation_bringup" name="turtlebot3_manipulation_bringup" output="screen"/>
+  </group>
+
+</launch>
