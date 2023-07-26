@@ -1,0 +1,12 @@
+<launch>
+  <!-- <arg name="first_robot"   default="TBwOM_1"/> -->
+  <arg name="second_robot"   default="TBwOM_2"/>
+
+  <!-- <include file="$(find turtlebot3_manipulation_bringup)/launch/turtlebot3_manipulation_bringup.launch">
+    <arg name="multi_robot_name" value="$(arg first_robot)"/>
+  </include> -->
+
+  <include file="$(find turtlebot3_manipulation_bringup)/launch/turtlebot3_manipulation_bringup.launch">
+    <arg name="multi_robot_name" value="$(arg second_robot)"/>
+  </include>
+</launch>
